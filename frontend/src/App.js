@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 //components 
 
-import AddCountryForm from './forms/AddCountryForm'
-import EditCountryForm from './forms/EditCountryForm'
-import CountryForm from './forms/CountryForm'
+import AddCountryForm from './components/AddCountryForm'
+import EditCountryForm from './components/EditCountryForm'
+import CountryForm from './components/CountryForm'
 import axios from 'axios';
 import './App.css'
 
@@ -13,14 +13,10 @@ const App = () => {
 
 	// Data
 	
-		const [countriesData,setCountriesData] = useState([]);
-
-		
-		
+	const [countriesData,setCountriesData] = useState([]);	
 	const initialState = { id: null, name: '', capital: '' }
 
 	// Setting state
-
 	const [ countries, setCountries ] = useState(countriesData)
 	const [ curCountry, setCurCountry ] = useState(initialState)
 	const [ edit, setEdit ] = useState(false)
@@ -28,36 +24,32 @@ const App = () => {
 	// CRUD operations
 
 	const addCountry = async (country) => {
-		const id = await axios.post(`http://localhost:4000/`,country);
+		const id = await axios.post(`/`,country);
 		getData();
 	}
-	
 	const deleteCountry = async (id) => {
 		setEdit(false)
-		await axios.delete(`http://localhost:4000/${id}`);
+		await axios.delete(`/${id}`);
 		getData();
 	}
-
 	const updateCountry = async (id, updatedCountry) => {
 		setEdit(false)
 		console.log(id);
-		await axios.put(`http://localhost:4000/${id}`,updatedCountry);
+		await axios.put(`/${id}`,updatedCountry);
 		getData();
 	}
 	const getData = async () =>{
-			const {data} = await axios.get('http://localhost:4000');
+			const {data} = await axios.get(`/countries`);
 			setCountriesData(data);
 			setCountries(data)
 	}
 	useEffect(()=>{
 		getData();
 	},[])
-
 	const editRow = async (country) => {
 		setEdit(true)
-		setCurCountry({ id: country.id, name: country.name, capital: country.capital })
+		setCurCountry(country)
 	}
-
 	return (
 	<Router>
 		<div>
@@ -115,14 +107,11 @@ const App = () => {
 		</div>
 	</Router>
 	)
-
 	function Home() {
 		return <h1 id = "hed2">Home</h1>;
 	  }
-	  
-	  function Info() {
+	function Info() {
 		return <h1 id = "hed3">Info</h1>;
 	  }
 }
-
 export default App

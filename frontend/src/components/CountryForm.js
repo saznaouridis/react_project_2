@@ -41,5 +41,4 @@ const CountryForm = props => (
     </tbody>
   </table>
 )
-
 export default CountryForm
