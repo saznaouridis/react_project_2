@@ -1,5 +1,4 @@
 import React from 'react'
-
 const CountryForm = props => (
   <table>
     <thead>
@@ -41,5 +40,4 @@ const CountryForm = props => (
     </tbody>
   </table>
 )
-
 export default CountryForm
