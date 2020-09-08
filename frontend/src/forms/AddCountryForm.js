@@ -37,10 +37,8 @@ const AddCountryForm = props => {
 			className="form-control" 
 			value={country.name} 
 			onChange={handleInputChange} />
-			
 				<label for="capitals">Capitals</label>
 				<input type="text" name="capital" value={country.capital} onChange={handleInputChange} />
-			
 			<p>
 				<button className="btn btn-success">Add</button>
 			</p>
