@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from 'react'
-
 const AddCountryForm = props => {
 	const initialState = { }
 	const [ country, setCountry ] = useState(initialState)
