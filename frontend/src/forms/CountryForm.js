@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 const CountryForm = props => (
   <table>
     <thead>
@@ -17,7 +17,7 @@ const CountryForm = props => (
             <td>
               <button
                 onClick={() => {
-                  props.editRow(country)
+                  props.editRow(country);
                 }}
                 className="button muted-button"
               >
@@ -40,4 +40,4 @@ const CountryForm = props => (
     </tbody>
   </table>
 )
-export default CountryForm
+export default CountryForm;
