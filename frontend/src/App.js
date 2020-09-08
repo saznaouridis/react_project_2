@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 //components 
 
-import AddCountryForm from './forms/AddCountryForm'
-import EditCountryForm from './forms/EditCountryForm'
-import CountryForm from './forms/CountryForm'
+import AddCountryForm from './components/AddCountryForm'
+import EditCountryForm from './components/EditCountryForm'
+import CountryForm from './components/CountryForm'
 import axios from 'axios';
 import './App.css'
 
