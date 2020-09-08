@@ -45,5 +45,5 @@ const AddCountryForm = props => {
 		</Fragment>
 	)
 }
-export default AddCountryForm
+export default AddCountryForm;
 
