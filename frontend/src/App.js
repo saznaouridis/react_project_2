@@ -41,7 +41,7 @@ const App = () => {
 	const getData = async () =>{
 			const {data} = await axios.get(`/countries`);
 			setCountriesData(data);
-			setCountries(data)
+			setCountries(data);
 	}
 	useEffect(()=>{
 		getData();
