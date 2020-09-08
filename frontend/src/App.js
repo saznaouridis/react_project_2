@@ -1,33 +1,26 @@
-import React, { useState, Fragment, useEffect } from 'react'
+import React, { useState, Fragment, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
 //components 
-
 import AddCountryForm from './components/AddCountryForm'
 import EditCountryForm from './components/EditCountryForm'
 import CountryForm from './components/CountryForm'
 import axios from 'axios';
 import './App.css'
-
 const App = () => {
-
 	// Data
-	
 	const [countriesData,setCountriesData] = useState([]);	
-	const initialState = { id: null, name: '', capital: '' }
-
+	const initialState = { id: null, name: '', capital: '' };
 	// Setting state
-	const [ countries, setCountries ] = useState(countriesData)
-	const [ curCountry, setCurCountry ] = useState(initialState)
-	const [ edit, setEdit ] = useState(false)
-
+	const [ countries, setCountries ] = useState(countriesData);
+	const [ curCountry, setCurCountry ] = useState(initialState);
+	const [ edit, setEdit ] = useState(false);
 	// CRUD operations
 	const addCountry = async (country) => {
 		const id = await axios.post(`/`,country);
 		getData();
 	}
 	const deleteCountry = async (id) => {
-		setEdit(false)
+		setEdit(false);
 		await axios.delete(`/${id}`);
 		getData();
 	}
@@ -40,14 +33,14 @@ const App = () => {
 	const getData = async () =>{
 			const {data} = await axios.get(`/countries`);
 			setCountriesData(data);
-			setCountries(data)
+			setCountries(data);
 	}
 	useEffect(()=>{
 		getData();
 	},[])
 	const editRow = async (country) => {
-		setEdit(true)
-		setCurCountry(country)
+		setEdit(true);
+		setCurCountry(country);
 	}
 	return (
 	<Router>
@@ -113,4 +106,4 @@ const App = () => {
 		return <h1 id = "hed3">Info</h1>;
 	  }
 }
-export default  App
+export default  App;
