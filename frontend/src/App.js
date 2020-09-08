@@ -113,4 +113,4 @@ const App = () => {
 		return <h1 id = "hed3">Info</h1>;
 	  }
 }
-export default App
+export default  App
