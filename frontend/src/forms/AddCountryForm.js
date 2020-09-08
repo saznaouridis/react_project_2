@@ -11,7 +11,6 @@ const AddCountryForm = props => {
 			console.log(err);
 			alert("Error");
 		}
-
 	}
 	const handleOnSubmit = e => {
 		e.preventDefault()
