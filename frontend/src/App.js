@@ -22,7 +22,6 @@ const App = () => {
 	const [ edit, setEdit ] = useState(false)
 
 	// CRUD operations
-
 	const addCountry = async (country) => {
 		const id = await axios.post(`/`,country);
 		getData();
