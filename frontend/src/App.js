@@ -62,7 +62,7 @@ const App = () => {
 						<Link to="/info">Info</Link>
 				  	</li>
 				  	<li>
-						<Link to="/countries">Countries</Link>
+						<Link to="/country">Countries</Link>
 				  	</li>
 				</ul>
 			</nav>
@@ -71,7 +71,7 @@ const App = () => {
 				<Route path="/info">
 					<Info />
 				</Route>
-				<Route path="/countries">
+				<Route path="/country">
 					<div className="container">
 						<h1 id = "hed1">Application</h1>
 						<div className="flex-row">
